@@ -1,5 +1,5 @@
 {
-  "name": "vue-runtime-component-demo",
+  "name": "vuec",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -19,6 +19,7 @@
     "jest": "^25.1.0",
     "vue": "^2.6.11",
     "vue-router": "^3.1.5",
+    "vue-server-renderer": "^2.6.11",
     "vuep": "^0.8.1",
     "vuex": "^3.1.2"
   },
