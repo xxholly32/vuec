@@ -4,13 +4,4 @@ module.exports = {
     // '@babel/es2015',
     // '@babel/stage-3',
   ],
-  plugins: [
-    [
-      'component',
-      {
-        libraryName: 'element-ui',
-        styleLibraryName: 'theme-chalk',
-      },
-    ],
-  ],
 };

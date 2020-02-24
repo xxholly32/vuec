@@ -1,46 +1,36 @@
 <template>
   <div class="hello">
-    <vuep :template="code" :scope="scope"></vuep>
+    <vuec :template="code"></vuec>
   </div>
 </template>
 
 <script>
-import HelloWorld from '@/components/HelloWorld.vue';
-import Features from '@/components/Features'; // Import component
 export default {
   name: 'EditorWithComponent',
   data() {
     return {
-      scope: { Features, HelloWorld },
       code: '',
     };
   },
   created: function() {
-    this.code = `
+    // eslint-disable-next-line no-useless-escape
+    const end = '<\/script>';
+    this.code =
+      `
 <template>
   <div>
-    <features :features="features"></features>
-    <hello-world msg="Welcome to Your Vue.js App" />
+    <hello-world :msg="msg" />
   </div>
 </template>
 
 <script>
-  module.exports = {
-    components: {
-      Features,
-      HelloWorld
-    },
+  export default {
     data () {
       return {
-        features: [
-          'Single File Component',
-          'Babel for ES6/JSX/UMD/CommonJS',
-          'Scoped style',
-          'Customizable JavaScript scope'
-        ]
+        msg: "Welcome to Your Vue.js App11"
       }
     }
-  }`;
+  }` + end;
   },
 };
 </script>

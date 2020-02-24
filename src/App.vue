@@ -4,8 +4,8 @@
       <router-link to="/">Home</router-link>|
       <router-link to="/simpleEditor">SimpleEditor</router-link>|
       <router-link to="/editorWithComponent">EditorWithComponent</router-link>|
-      <router-link to="/editorWithElementButton">EditorWithElementButton</router-link>|
       <router-link to="/editorWithElement">EditorWithElement</router-link>|
+      <router-link to="/editorWithComplex">EditorWithComplex</router-link>|
     </div>
     <router-view />
   </div>

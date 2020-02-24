@@ -1,6 +1,6 @@
 <template>
   <div class="hello">
-    <vuep :template="code" :scope="scope"></vuep>
+    <vuec :template="code"></vuec>
   </div>
 </template>
 
@@ -13,16 +13,20 @@ export default {
     };
   },
   created: function() {
-    this.code = `
-<template>
-  <div>
-    <el-button type="primary">主要按钮</el-button>
-  </div>
-</template>
+    // eslint-disable-next-line no-useless-escape
+    const end = '<\/script>';
+    this.code =
+      `
+    <template>
+      <div>
+        <el-button type="primary">主要按钮</el-button>
+      </div>
+    </template>
 
-<script>
-  module.exports = {
-  }`;
+    <script>
+      export default {
+      }
+  ` + end;
   },
 };
 </script>

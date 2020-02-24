@@ -1,6 +1,6 @@
 <template>
   <div class="hello">
-    <vuep :template="code"></vuep>
+    <vuec :template="code"></vuec>
   </div>
 </template>
 
@@ -13,18 +13,22 @@ export default {
     };
   },
   created: function() {
-    this.code = `
+    // eslint-disable-next-line no-useless-escape
+    const end = '<\/script>';
+    this.code =
+      `
     <template>
       <div>Hello, {{ name }}!</div>
     </template>
 
     <script>
-      module.exports = {
+      export default {
         data: function () {
           return { name: 'Vue' }
         }
       }
-    `;
+    
+    ` + end;
   },
 };
 </script>

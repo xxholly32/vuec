@@ -27,12 +27,20 @@ const routes = [
     component: () => import(/* webpackChunkName: "about" */ '../views/EditorWithComponent.vue'),
   },
   {
-    path: '/editorWithElementButton',
-    name: 'EditorWithElementButton',
+    path: '/editorWithElement',
+    name: 'EditorWithElement',
     // route level code-splitting
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/EditorWithElementButton.vue'),
+    component: () => import(/* webpackChunkName: "about" */ '../views/EditorWithElement.vue'),
+  },
+  {
+    path: '/editorWithComplex',
+    name: 'EditorWithComplex',
+    // route level code-splitting
+    // this generates a separate chunk (about.[hash].js) for this route
+    // which is lazy-loaded when the route is visited.
+    component: () => import(/* webpackChunkName: "about" */ '../views/EditorWithComplex.vue'),
   },
   {
     path: '/editorWithElement',
