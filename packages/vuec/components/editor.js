@@ -1,38 +1,41 @@
-import CodeMirror from 'codemirror';
-import assign from '../utils/assign';
+import CodeMirror from "codemirror";
+import assign from "../utils/assign";
 
 const DEFAULT_OPTIONS = {
   lineNumbers: true,
-  mode: 'text/x-vue',
-  theme: 'material',
-  tabSize: 2,
+  mode: "text/x-vue",
+  theme: "material",
+  tabSize: 2
 };
 
 export default {
-  name: 'VueCodeMirror',
+  name: "VueCodeMirror",
 
-  props: ['value', 'options'],
+  props: ["value", "options"],
 
   render(h) {
-    return h('div', null, [h('textarea', { ref: 'textarea' }, this.value)]);
+    return h("div", null, [h("textarea", { ref: "textarea" }, this.value)]);
   },
 
   mounted() {
     this.currentOptions = assign({}, DEFAULT_OPTIONS, this.options);
-    this.editor = CodeMirror.fromTextArea(this.$refs.textarea, this.currentOptions);
-    this.editor.on('change', this.handleChange);
+    this.editor = CodeMirror.fromTextArea(
+      this.$refs.textarea,
+      this.currentOptions
+    );
+    this.editor.on("change", this.handleChange);
   },
 
   watch: {
     value(val) {
       val !== this.editor.getValue() && this.editor.setValue(val);
-    },
+    }
   },
 
   methods: {
     handleChange() {
       /* istanbul ignore next */
-      this.$emit('change', this.editor.getValue());
-    },
-  },
+      this.$emit("change", this.editor.getValue());
+    }
+  }
 };

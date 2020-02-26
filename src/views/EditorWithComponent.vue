@@ -6,32 +6,31 @@
 
 <script>
 export default {
-  name: 'EditorWithComponent',
+  name: "EditorWithComponent",
   data() {
     return {
-      code: '',
+      code: ""
     };
   },
   created: function() {
+    // 需要转译一下，这里还不是特别好的解法
     // eslint-disable-next-line no-useless-escape
-    const end = '<\/script>';
+    const end = "<\/script>";
     this.code =
       `
-<template>
-  <div>
-    <hello-world :msg="msg" />
-  </div>
-</template>
+      <template>
+        <hello-world :msg="message"></hello-world>
+      </template>
 
-<script>
-  export default {
-    data () {
-      return {
-        msg: "Welcome to Your Vue.js App11"
-      }
-    }
-  }` + end;
-  },
+      <script>
+        export default {
+          data () {
+            return {
+              message: "Welcome to Your Vue.js App"
+            }
+          }
+        }` + end;
+  }
 };
 </script>
 

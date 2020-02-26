@@ -8,12 +8,14 @@ export default {
     default: ""
   },
 
-  render(h) {
-    // 查找template
-    const parse = parseComponent(this.value);
-    const code = compile(parse.template.content);
+  render: function(h) {
+    let self = this;
+    if (self.value.indexOf("template") > -1) {
+      // 查找template
+      const parse = parseComponent(self.value);
+      const code = compile(parse.template.content);
 
-    // debugger;
-    return transform.renderFunc(h, code.ast, parse.script);
+      return transform.renderFunc(h, code.ast, parse.script, self);
+    }
   }
 };

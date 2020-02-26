@@ -1,5 +1,4 @@
-import * as parser from '@babel/parser';
-import traverse from '@babel/traverse';
+import { run } from "xxtest-myjs";
 
 /**
  * javascript comment
@@ -7,42 +6,37 @@ import traverse from '@babel/traverse';
  * @Date: 2020-02-22 11:37:20
  * @Desc:
  */
-function parseDaddyName(str, parentname) {
-  const ast = parser.parse(str, { sourceType: 'module' });
-  let result = {};
+function parseDaddyName(str, scriptname) {
+  try {
+    if (str.indexOf("export default") > -1) {
+      str = str.replace(/export default /, "module.exports = ");
+    }
 
-  traverse(ast, {
-    ObjectProperty(path) {
-      const parent = path.findParent(p => {
-        return p.node.key ? p.node.key.name === parentname : false;
-      });
-      if (parent) {
-        result[path.node.key.name] = path.node.value.value;
-      }
-    },
-  });
-  return result;
+    // js to js function from  https://github.com/anuoua/minejs
+    const runner = run(str, {}, true);
+
+    return typeof runner[scriptname] === "function"
+      ? runner[scriptname]()
+      : runner[scriptname];
+  } catch (error) {
+    console.error(error);
+  }
 }
 
-// /**
-//  * javascript comment
-//  * @Author: xiangxiao3
-//  * @Date: 2020-02-22 11:37:20
-//  * @Desc:
-//  */
-function parseGetFunction(str, parentname) {
-  const ast = parser.parse(str, { sourceType: 'module' });
-  let result = {};
-
-  traverse(ast, {
-    ObjectMethod(path) {
-      const parent = path.findParent(p => p.isObjectProperty());
-      if (parent && parent.node.key.name === parentname) {
-        result[path.node.key.name] = path.node;
-      }
-    },
-  });
-  return result;
+/**
+ * javascript comment
+ * @Author: xiangxiao3
+ * @Date: 2020-02-26 15:35:49
+ * @Desc: get propertys from script
+ */
+function fetchExpression(key, script, type = "data") {
+  if (key.match(/[a-zA-Z]+/)) {
+    let props = parseDaddyName(script.content, type);
+    // 用.分割，form.name => props[form][name]
+    return key.split(".").reduce((res, val) => res[val], props);
+  } else {
+    return run(key);
+  }
 }
 
-export { parseDaddyName, parseGetFunction };
+export { parseDaddyName, fetchExpression };

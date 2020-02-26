@@ -1,13 +1,10 @@
 import { mount, createLocalVue, shallowMount } from "@vue/test-utils";
-import { createRenderer } from "vue-server-renderer";
 import preview from "../components/preview.js";
 import ElementUI from "element-ui";
 
 import HelloWorld from "../../../src/components/HelloWorld.vue";
 
 const localVue = createLocalVue();
-
-// localVue.component("HelloWorld", HelloWorld);
 
 describe("vuec ", () => {
   it("simple template", () => {
@@ -99,5 +96,39 @@ describe("vuec ", () => {
     });
 
     expect(wrapper.find("span").text()).toBe("Hello, world!");
+  });
+
+  it("simple template with event", () => {
+    const code = `
+    <template>
+      <div>
+        <el-button @click="handlerClick">test</el-button>
+      </div>
+    </template>
+
+    <script>
+      export default {
+        methods:{
+          handlerClick(){
+            console.log("button click")
+          }
+        }
+      }
+    </script>
+    `;
+
+    localVue.use(ElementUI);
+
+    const wrapper = mount(preview, {
+      localVue,
+      sync: false,
+      propsData: { value: code }
+    });
+
+    let outputData = "";
+    console["log"] = jest.fn(inputs => (outputData += inputs));
+    wrapper.vm.$el.getElementsByTagName("button")[0].click();
+
+    expect(outputData).toBe("button click");
   });
 });

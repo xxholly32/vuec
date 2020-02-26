@@ -6,28 +6,36 @@
 
 <script>
 export default {
-  name: 'EditorWithElementButton',
+  name: "EditorWithElementButton",
   data() {
     return {
-      code: '',
+      code: ""
     };
   },
   created: function() {
     // eslint-disable-next-line no-useless-escape
-    const end = '<\/script>';
+    const end = "<\/script>";
     this.code =
       `
     <template>
       <div>
-        <el-button type="primary">主要按钮</el-button>
+        <el-button @click="handlerClick" type="primary">{{ msg }}</el-button>
       </div>
     </template>
 
     <script>
       export default {
+        data() {
+          return {  msg: "Hello, world!" }
+        },
+        methods:{
+          handlerClick(){
+            console.log("button click")
+          }
+        }
       }
   ` + end;
-  },
+  }
 };
 </script>
 

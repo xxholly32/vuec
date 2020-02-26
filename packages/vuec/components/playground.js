@@ -1,55 +1,57 @@
-import Editor from './editor';
-import Preview from './preview';
+import Editor from "./editor";
+import Preview from "./preview";
 // import { compile } from 'vue-template-compiler';
 export default {
-  name: 'Vuec',
+  name: "Vuec",
 
   props: {
     template: String,
-    options: {},
+    options: {}
   },
 
   data() {
     return {
-      preview: '',
+      preview: ""
     };
   },
 
   render(h) {
-    return h('div', { class: 'vuep' }, [
+    return h("div", { class: "vuep" }, [
       h(Editor, {
-        class: 'vuep-editor',
+        class: "vuep-editor",
         props: {
           value: this.template,
-          options: this.options,
+          options: this.options
         },
         on: {
-          change: [this.executeCode, val => this.executeCode(val)],
-        },
+          change: [this.executeCode, val => this.executeCode(val)]
+        }
       }),
       h(Preview, {
-        class: 'vuep-preview',
+        class: "vuep-preview",
         props: {
-          value: this.preview,
-        },
-      }),
+          value: this.preview
+        }
+      })
     ]);
   },
 
   watch: {
     template: {
       immediate: true,
-      handler(val) {
-        val && this.executeCode(val);
-      },
-    },
+      handler(val, oldVal) {
+        if (val !== oldVal) {
+          val && this.executeCode(val);
+        }
+      }
+    }
   },
 
   methods: {
     executeCode(code) {
-      this.error = '';
+      this.error = "";
 
       this.preview = code;
-    },
-  },
+    }
+  }
 };
