@@ -6,9 +6,9 @@
       <router-link to="/editorWithComponent">EditorWithComponent</router-link>|
       <router-link to="/editorWithElement">EditorWithElement</router-link>|
       <router-link to="/editorWithComplex">EditorWithComplex</router-link>|
-      <router-link to="/editorWithElementDrag"
+      <!-- <router-link to="/editorWithElementDrag"
         >EditorWithElementDrag</router-link
-      >|
+      >| -->
     </div>
     <router-view />
   </div>
