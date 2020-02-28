@@ -7475,6 +7475,13 @@ mimic-fn@^2.0.0, mimic-fn@^2.1.0:
   resolved "https://registry.npm.taobao.org/mimic-fn/download/mimic-fn-2.1.0.tgz#7ed2c2ccccaf84d3ffcb7a69b57711fc2083401b"
   integrity sha1-ftLCzMyvhNP/y3pptXcR/CCDQBs=
 
+mine-jsjs@^0.0.1:
+  version "0.0.1"
+  resolved "https://registry.npmjs.org/mine-jsjs/-/mine-jsjs-0.0.1.tgz#ac89c9426d2c52b175e50b929b9b723fd3378470"
+  integrity sha512-yVgzI+DQ4xvSyRUXOxVuoCbymUmXYGe1BsyBCL0+xoAHn+9tiIcTN/Z2A0mIK1MlrNGL25MVj1p7KiLTMVYKmw==
+  dependencies:
+    acorn "^7.1.0"
+
 mini-css-extract-plugin@^0.9.0:
   version "0.9.0"
   resolved "https://registry.npm.taobao.org/mini-css-extract-plugin/download/mini-css-extract-plugin-0.9.0.tgz?cache=0&sync_timestamp=1576856580721&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fmini-css-extract-plugin%2Fdownload%2Fmini-css-extract-plugin-0.9.0.tgz#47f2cf07aa165ab35733b1fc97d4c46c0564339e"
@@ -11145,13 +11152,6 @@ xtend@^4.0.0, xtend@~4.0.1:
   version "4.0.2"
   resolved "https://registry.npm.taobao.org/xtend/download/xtend-4.0.2.tgz#bb72779f5fa465186b1f438f674fa347fdb5db54"
   integrity sha1-u3J3n1+kZRhrH0OPZ0+jR/2121Q=
-
-xxtest-myjs@^1.0.0:
-  version "1.0.0"
-  resolved "https://registry.npmjs.org/xxtest-myjs/-/xxtest-myjs-1.0.0.tgz#e59b2f3e7f65c3b2f4e05db68666976dd71003e4"
-  integrity sha512-Sj3FIvKQhVy/DUN35FuXX6qgMeWFeUYJYaXBXziv6s6vpXHiWVLqWyeWjkY9C4cKaNC3THt2FDXMrDICzBYcrw==
-  dependencies:
-    acorn "^7.1.0"
 
 "y18n@^3.2.1 || ^4.0.0", y18n@^4.0.0:
   version "4.0.0"

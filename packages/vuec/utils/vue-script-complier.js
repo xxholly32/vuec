@@ -1,4 +1,4 @@
-import { run } from "xxtest-myjs";
+import { run } from "mine-jsjs";
 
 /**
  * javascript comment
@@ -13,7 +13,7 @@ function parseDaddyName(str, scriptname) {
     }
 
     // js to js function from  https://github.com/anuoua/minejs
-    const runner = run(str, {}, true);
+    const runner = run(str, { injectObj: {}, module: true });
 
     return typeof runner[scriptname] === "function"
       ? runner[scriptname]()

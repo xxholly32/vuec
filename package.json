@@ -17,12 +17,12 @@
     "core-js": "^3.6.4",
     "element-ui": "^2.13.0",
     "jest": "^25.1.0",
+    "mine-jsjs": "^0.0.1",
     "vue": "^2.6.11",
     "vue-router": "^3.1.5",
     "vue-server-renderer": "^2.6.11",
     "vuep": "^0.8.1",
-    "vuex": "^3.1.2",
-    "xxtest-myjs": "^1.0.0"
+    "vuex": "^3.1.2"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "^4.2.0",
