@@ -6,15 +6,15 @@
 
 <script>
 export default {
-  name: 'SimpleEditor',
+  name: "SimpleEditor",
   data() {
     return {
-      code: '',
+      code: ""
     };
   },
   created: function() {
     // eslint-disable-next-line no-useless-escape
-    const end = '<\/script>';
+    const end = "<\/script>";
     this.code =
       `
     <template>
@@ -29,7 +29,7 @@ export default {
       }
     
     ` + end;
-  },
+  }
 };
 </script>
 

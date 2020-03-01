@@ -75,3 +75,4 @@ yarn run unit:test
 - [ ] 更多复杂实例测试，完善 render 代码
 - [ ] 周边插件实现
 - [ ] 代码优化
+- [ ] vuec build
