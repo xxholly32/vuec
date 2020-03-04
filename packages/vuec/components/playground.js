@@ -52,6 +52,7 @@ export default {
       this.error = "";
 
       this.preview = code;
+      this.$emit('change', code)
     }
   }
 };

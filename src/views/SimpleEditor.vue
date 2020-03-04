@@ -1,6 +1,6 @@
 <template>
   <div class="hello">
-    <vuec :template="code"></vuec>
+    <vuec :template="code" @change="change"></vuec>
   </div>
 </template>
 
@@ -29,6 +29,11 @@ export default {
       }
     
     ` + end;
+  },
+  methods: {
+    change(val) {
+      console.log(val);
+    }
   }
 };
 </script>
