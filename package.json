@@ -1,5 +1,5 @@
 {
-  "name": "vue-component-source-render",
+  "name": "vue-component-code-render",
   "version": "0.2.0",
   "main": "packages/vuec/index.js",
   "scripts": {

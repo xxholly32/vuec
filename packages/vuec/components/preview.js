@@ -1,7 +1,7 @@
 import transform from "../utils/transform";
 import { compile, parseComponent } from "vue-template-compiler";
 export default {
-  name: "preview",
+  name: "vuec-preview",
 
   props: {
     value: String,
