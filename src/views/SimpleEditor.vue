@@ -5,6 +5,7 @@
 </template>
 
 <script>
+// import _ from 'lodash'
 export default {
   name: "SimpleEditor",
   data() {
@@ -18,40 +19,38 @@ export default {
     this.code =
       `
     <template>
-      <div>Hello, {{ name }}!</div>
+      <div class="xxtest">Hello, {{ name }}!</div>
     </template>
+
+    <style scoped>
+      .xxtest {
+        color: red;
+      }
+    </style>
 
     <script>
       export default {
         data: function () {
           return { name: 'Vue' }
+        },
+        mounted(){
+          console.log("start mounted")
         }
       }
-    
+
     ` + end;
   },
   methods: {
     change(val) {
       console.log(val);
     }
+  },
+  mounted() {
+    // console.log(_.defaults({ 'a': 1 }, { 'a': 3, 'b': 2 }))
   }
 };
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-h3 {
-  margin: 40px 0 0;
-}
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-li {
-  display: inline-block;
-  margin: 0 10px;
-}
-a {
-  color: #42b983;
-}
 </style>

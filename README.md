@@ -73,6 +73,8 @@ yarn run unit:test
 ### TODO
 
 - [ ] 更多复杂实例测试，完善 render 代码
-- [ ] 周边插件实现
+ - [ ] 样式引入 
+ - [ ] import 引入方案实现
+ - [ ] 如何引入 mock 数据
 - [ ] 代码优化
 - [ ] vuec build
