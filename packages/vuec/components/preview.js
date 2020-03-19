@@ -17,8 +17,17 @@ export default {
       const parse = parseComponent(self.value);
       const code = compile(parse.template.content);
 
+      if (parse.styles[0]) {
+        this.compliorStyle(parse.styles[0].content);
+      }
+
+      return transform.renderFunc(h, code.ast, parse.script, self);
+    }
+  },
+  methods: {
+    compliorStyle(content) {
       postcss([autoprefixer])
-        .process(parse.styles[0].content, {
+        .process(content, {
           from: undefined,
           to: undefined
         })
@@ -26,7 +35,7 @@ export default {
           result.warnings().forEach(warn => {
             console.warn(warn.toString());
           });
-          console.log(result.css);
+          // console.log(result.css);
           let style = document.createElement("style");
           style.type = "text/css";
           style.innerHTML = result.css;
@@ -35,9 +44,6 @@ export default {
             .item(0)
             .appendChild(style);
         });
-      // debugger
-
-      return transform.renderFunc(h, code.ast, parse.script, self);
     }
   }
 };

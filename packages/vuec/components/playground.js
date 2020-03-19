@@ -1,38 +1,68 @@
 import Editor from "./editor";
 import Preview from "./preview";
+import Toolbar from "./toolbar.vue";
 // import { compile } from 'vue-template-compiler';
 export default {
   name: "Vuec",
 
+  components: { Toolbar },
+
   props: {
     template: String,
-    options: {}
+    options: {},
+    showTools: {
+      type: Boolean,
+      default: true
+    },
+    showCode: {
+      type: Boolean,
+      default: true
+    }
   },
 
   data() {
     return {
-      preview: ""
+      preview: "",
+      showEditor: true
     };
   },
 
   render(h) {
-    return h("div", { class: "vuep" }, [
-      h(Editor, {
-        class: "vuep-editor",
-        props: {
-          value: this.template,
-          options: this.options
-        },
-        on: {
-          change: [this.executeCode, val => this.executeCode(val)]
-        }
-      }),
-      h(Preview, {
-        class: "vuep-preview",
-        props: {
-          value: this.preview
-        }
-      })
+    const tooldiv = this.showTools
+      ? h(Toolbar, {
+          on: {
+            showCode: this.codeBtnChange
+          }
+        })
+      : null;
+    const editordiv = this.showTools
+      ? h(Editor, {
+          class: "vuep-editor",
+          style: {
+            display: this.showEditor ? "block" : "none"
+          },
+          props: {
+            value: this.template,
+            options: this.options,
+            showEditor: this.showEditor
+          },
+          on: {
+            change: [this.executeCode, val => this.executeCode(val)]
+          }
+        })
+      : null;
+
+    return h("div", [
+      tooldiv,
+      h("div", { class: "vuep" }, [
+        editordiv,
+        h(Preview, {
+          class: "vuep-preview",
+          props: {
+            value: this.preview
+          }
+        })
+      ])
     ]);
   },
 
@@ -52,7 +82,10 @@ export default {
       this.error = "";
 
       this.preview = code;
-      this.$emit('change', code)
+      this.$emit("change", code);
+    },
+    codeBtnChange(isShow) {
+      this.showEditor = isShow;
     }
   }
 };

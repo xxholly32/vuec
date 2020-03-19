@@ -2,6 +2,7 @@ import Vue from "vue";
 import App from "./App.vue";
 import router from "./router";
 import ElementUI from "element-ui";
+// import Vuec from "../packages/vuec/dist/index.cjs";
 import Vuec from "../packages/vuec";
 
 import HelloWorld from "@/components/HelloWorld.vue";

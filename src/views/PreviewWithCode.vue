@@ -1,6 +1,6 @@
 <template>
   <div class="hello">
-    <vuec-preview :value="code"></vuec-preview>
+    <vuec :showTools="false" :template="code"></vuec>
   </div>
 </template>
 
