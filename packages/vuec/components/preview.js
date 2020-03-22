@@ -7,7 +7,13 @@ export default {
 
   props: {
     value: String,
-    default: ""
+    default: "ß"
+  },
+
+  data() {
+    return {
+      styleTag: null
+    };
   },
 
   render: function(h) {
@@ -36,13 +42,13 @@ export default {
             console.warn(warn.toString());
           });
           // console.log(result.css);
-          let style = document.createElement("style");
-          style.type = "text/css";
-          style.innerHTML = result.css;
-          document
-            .getElementsByTagName("HEAD")
-            .item(0)
-            .appendChild(style);
+          // TODO: 1.支持多种样式打包
+          if (!this.styleTag) {
+            this.styleTag = document.createElement("style");
+            var head = document.getElementsByTagName("head")[0];
+            head.appendChild(this.styleTag);
+          }
+          this.styleTag.innerHTML = result.css;
         });
     }
   }

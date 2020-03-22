@@ -19,11 +19,11 @@ export default {
     this.code =
       `
     <template>
-      <div class="xxtest">Hello, {{ name }}!</div>
+      <div class="test-style">Hello, {{ name }}!</div>
     </template>
 
     <style scoped>
-      .xxtest {
+      .test-style {
         color: red;
       }
     </style>

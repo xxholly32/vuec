@@ -12,7 +12,7 @@
 
 利用 vue-template-compiler 解析单文件，对于 template 的文件利用 createElement 来实现，对于数据端以及 js 逻辑端展示，采用 mine-jsjs 进行解析，对于部分数据进行单项绑定；简单事件可以正常处理（比如 console）；现阶段对于简单的页面可以做到基本正常显示，并实时动态修改；
 
-为什么不用 vuep 实现；
+为什么不用 vuep；
 
 引入组件比较麻烦，需要将一些组件做成 umd 格式；其次，为了做到渲染的时候可以在做一些逻辑处理，vuep 是一个黑盒，完全是一个全新的 vue 实例；
 
@@ -73,8 +73,8 @@ yarn run unit:test
 ### TODO
 
 - [ ] 更多复杂实例测试，完善 render 代码
- - [ ] 样式引入 
+ - [ ] 样式引入 （已支持postcss）
  - [ ] import 引入方案实现
  - [ ] 如何引入 mock 数据
 - [ ] 代码优化
-- [ ] vuec build
+- [ ] rollup 打包
