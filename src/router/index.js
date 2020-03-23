@@ -13,69 +13,62 @@ const routes = [
   {
     path: "/simpleEditor",
     name: "SimpleEditor",
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
     component: () =>
-      import(/* webpackChunkName: "about" */ "../views/SimpleEditor.vue")
+      import(/* webpackChunkName: "about" */ "../views/vuec/SimpleEditor.vue")
   },
   {
     path: "/editorWithComponent",
     name: "EditorWithComponent",
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
     component: () =>
-      import(/* webpackChunkName: "about" */ "../views/EditorWithComponent.vue")
+      import(
+        /* webpackChunkName: "about" */ "../views/vuec/EditorWithComponent.vue"
+      )
   },
   {
     path: "/editorWithElement",
     name: "EditorWithElement",
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
     component: () =>
-      import(/* webpackChunkName: "about" */ "../views/EditorWithElement.vue")
+      import(
+        /* webpackChunkName: "about" */ "../views/vuec/EditorWithElement.vue"
+      )
   },
   {
     path: "/editorWithComplex",
     name: "EditorWithComplex",
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
     component: () =>
-      import(/* webpackChunkName: "about" */ "../views/EditorWithComplex.vue")
+      import(
+        /* webpackChunkName: "about" */ "../views/vuec/EditorWithComplex.vue"
+      )
   },
   {
     path: "/editorWithElement",
     name: "EditorWithElement",
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
     component: () =>
-      import(/* webpackChunkName: "about" */ "../views/EditorWithElement.vue")
+      import(
+        /* webpackChunkName: "about" */ "../views/vuec/EditorWithElement.vue"
+      )
   },
   {
     path: "/editorWithElementDrag",
     name: "EditorWithElementDrag",
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
     component: () =>
       import(
-        /* webpackChunkName: "about" */ "../views/EditorWithElementDrag.vue"
+        /* webpackChunkName: "about" */ "../views/vuec/EditorWithElementDrag.vue"
       )
   },
   {
     path: "/previewWithCode",
     name: "PreviewWithCode",
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
     component: () =>
       import(
-        /* webpackChunkName: "about" */ "../views/PreviewWithCode.vue"
+        /* webpackChunkName: "about" */ "../views/vuec/PreviewWithCode.vue"
       )
+  },
+  {
+    path: "/vuem",
+    name: "VuemSimpleEditor",
+    component: () =>
+      import(/* webpackChunkName: "about" */ "../views/vuem/SimpleEditor.vue")
   }
 ];
 

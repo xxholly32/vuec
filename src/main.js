@@ -4,6 +4,7 @@ import router from "./router";
 import ElementUI from "element-ui";
 // import Vuec from "../packages/vuec/dist/index.cjs";
 import Vuec from "../packages/vuec";
+import Vuem from "../packages/vuem";
 
 import HelloWorld from "@/components/HelloWorld.vue";
 
@@ -17,6 +18,7 @@ Vue.use(ElementUI, {
 });
 // Tell Vue.js to use vue-highlightjs
 Vue.use(Vuec);
+Vue.use(Vuem);
 Vue.component("HelloWorld", HelloWorld);
 
 new Vue({

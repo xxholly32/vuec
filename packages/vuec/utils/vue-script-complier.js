@@ -19,6 +19,7 @@ function parseDaddyName(str, scriptname) {
       ? runner[scriptname]()
       : runner[scriptname];
   } catch (error) {
+    console.error("js 引擎解析失效");
     console.error(error);
   }
 }

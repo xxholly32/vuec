@@ -8,9 +8,12 @@
     "lint": "vue-cli-service lint",
     "test:unit": "vue-cli-service test:unit",
     "build:file": "rollup -c",
-    "build:css": "node build/build-css.js"
+    "build:css": "node build/build-css.js",
+    "release": "bash deploy.sh"
   },
   "dependencies": {
+    "babel-plugin-transform-remove-console": "^6.9.4",
+    "markdown-it": "^10.0.0",
     "mine-jsjs": "^0.0.1",
     "rollup-plugin-vue-inline-svg": "^1.1.1",
     "simple-assign": "^0.1.0",

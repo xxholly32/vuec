@@ -7,6 +7,7 @@
       <router-link to="/editorWithElement">EditorWithElement</router-link>|
       <router-link to="/editorWithComplex">EditorWithComplex</router-link>|
       <router-link to="/previewWithCode">PreviewWithCode</router-link>|
+      <router-link to="/vuem">vuem</router-link>|
       <!-- <router-link to="/editorWithElementDrag"
         >EditorWithElementDrag</router-link
       >| -->

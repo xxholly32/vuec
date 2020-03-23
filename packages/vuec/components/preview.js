@@ -7,7 +7,7 @@ export default {
 
   props: {
     value: String,
-    default: "ß"
+    default: ""
   },
 
   data() {
@@ -20,11 +20,26 @@ export default {
     let self = this;
     if (self.value.indexOf("template") > -1) {
       // 查找template
-      const parse = parseComponent(self.value);
-      const code = compile(parse.template.content);
-
-      if (parse.styles[0]) {
-        this.compliorStyle(parse.styles[0].content);
+      let parse, code;
+      try {
+        parse = parseComponent(self.value);
+      } catch (error) {
+        console.error("vue 文件解析失败");
+        console.error(error);
+      }
+      try {
+        code = compile(parse.template.content);
+      } catch (error) {
+        console.error("template 解析失败");
+        console.error(error);
+      }
+      try {
+        if (parse.styles[0]) {
+          this.compliorStyle(parse.styles[0].content);
+        }
+      } catch (error) {
+        console.error("style 解析失败");
+        console.error(error);
       }
 
       return transform.renderFunc(h, code.ast, parse.script, self);
@@ -41,7 +56,7 @@ export default {
           result.warnings().forEach(warn => {
             console.warn(warn.toString());
           });
-          // console.log(result.css);
+          // console.error(result.css);
           // TODO: 1.支持多种样式打包
           if (!this.styleTag) {
             this.styleTag = document.createElement("style");
