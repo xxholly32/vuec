@@ -4,8 +4,8 @@ import router from "./router";
 import ElementUI from "element-ui";
 import "element-ui/lib/theme-chalk/index.css";
 
-// import Vuec from "../packages/index";
-import Vuec from "../packages/dist/vuec.umd";
+import Vuec from "../packages/index";
+// import Vuec from "../packages/dist/vuec.umd";
 import "../packages/dist/vuec.css";
 
 import HelloWorld from "@/components/HelloWorld.vue";

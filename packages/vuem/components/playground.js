@@ -58,6 +58,9 @@ export default {
         editordiv,
         h(Preview, {
           class: "vuec-preview",
+          style: {
+            width: this.showEditor && this.showTools ? "50%" : "100%"
+          },
           props: {
             value: this.preview
           }

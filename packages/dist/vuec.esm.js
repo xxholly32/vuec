@@ -282,6 +282,9 @@ var Vuem = {
         editordiv,
         h(Preview, {
           class: "vuec-preview",
+          style: {
+            width: this.showEditor && this.showTools ? "50%" : "100%"
+          },
           props: {
             value: this.preview
           }
@@ -711,6 +714,9 @@ var Vuec = {
         editordiv,
         h(Preview$1, {
           class: "vuec-preview",
+          style: {
+            width: this.showEditor && this.showTools ? "50%" : "100%"
+          },
           props: {
             value: this.preview
           }
