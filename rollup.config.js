@@ -1,18 +1,21 @@
 import vue from "rollup-plugin-vue";
-import svg from "rollup-plugin-vue-inline-svg";
+// import svg from "rollup-plugin-vue-inline-svg";
 import commonjs from "rollup-plugin-commonjs";
 
 export default {
-  input: "./packages/vuec/index.js",
+  input: "./packages/index.js",
   output: {
-    file: "./packages/vuec/dist/index.cjs.js",
-    format: "cjs"
+    name: "vuec",
+    exports: "named"
   },
   // ...
   plugins: [
     // ...
-    svg(),
     commonjs(),
-    vue(/* options */)
+    vue({
+      css: true, // Dynamically inject css as a <style> tag
+      compileTemplate: true, // Explicitly convert template to render function
+      template: { optimizeSSR: false }
+    })
   ]
 };

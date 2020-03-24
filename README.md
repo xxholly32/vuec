@@ -73,11 +73,11 @@ yarn run unit:test
 ### TODO
 
 - [ ] 更多复杂实例测试，完善 render 代码
-  - [ ] 样式引入 （已支持 postcss）
+  - [x] 样式引入 （已支持 postcss）
   - [ ] import 引入方案实现 (这个估计无法支持了)
   - [ ] 如何引入 mock 数据
-- [ ] vuec 报错信息 （现在统一打印在 console，包括 vue 的错误信息）
+- [x] vuec 报错信息 （现在统一打印在 console，包括 vue 的错误信息）
 - [ ] 代码优化
-- [ ] rollup 打包
+- [x] rollup 打包
 
 * [ ] 设计 md 编辑器

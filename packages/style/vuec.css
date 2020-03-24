@@ -1,7 +1,7 @@
 @import "codemirror/lib/codemirror.css";
 @import "codemirror/theme/material.css";
 
-.vuep {
+.vuec {
   display: flex;
   font-family: "Source Sans Pro", "Helvetica Neue", Arial, sans-serif;
   height: 400px;
@@ -29,9 +29,9 @@
   }
 }
 
-.vuep-editor,
-.vuep-preview,
-.vuep-error {
+.vuec-editor,
+.vuec-preview,
+.vuec-error {
   border-radius: 2px;
   height: inherit;
   margin-right: 10px;
@@ -47,32 +47,38 @@
   }
 }
 
-.vuep-editor {
+.vuec-editor {
   line-height: 1.2em;
 }
 
-.vuep-error {
+.vuec-error {
   color: #f66;
 }
 
-.vuep-preview,
-.vuep-error {
+.vuec-preview,
+.vuec-error {
   border: 1px solid #eee;
   box-sizing: border-box;
   padding: 25px 35px;
 }
 
 @media (max-width: 600px) {
-  .vuep {
+  .vuec {
     display: block;
     height: auto;
   }
 
-  .vuep-editor,
-  .vuep-preview,
-  .vuep-error {
+  .vuec-editor,
+  .vuec-preview,
+  .vuec-error {
     margin: 0 0 15px 0;
     height: 400px;
     width: 100%;
   }
+}
+
+.code-box-action {
+  width: 100%;
+  text-align: center;
+  padding: 5px;
 }

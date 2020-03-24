@@ -37,7 +37,7 @@ export default {
       : null;
     const editordiv = this.showTools
       ? h(Editor, {
-          class: "vuep-editor",
+          class: "vuec-editor",
           style: {
             display: this.showEditor ? "block" : "none"
           },
@@ -54,10 +54,10 @@ export default {
 
     return h("div", [
       tooldiv,
-      h("div", { class: "vuep" }, [
+      h("div", { class: "vuec" }, [
         editordiv,
         h(Preview, {
-          class: "vuep-preview",
+          class: "vuec-preview",
           props: {
             value: this.preview
           }

@@ -505,36 +505,36 @@ span.CodeMirror-selectedtext {
   color: white !important;
 }
 
-.vuep {
+.vuec {
   display: -ms-flexbox;
   display: flex;
   font-family: "Source Sans Pro", "Helvetica Neue", Arial, sans-serif;
   height: 400px;
 }
 
-.vuep ::-webkit-scrollbar-track {
+.vuec ::-webkit-scrollbar-track {
   border-radius: 10px;
   background-color: #f5f5f5;
 }
 
-.vuep ::-webkit-scrollbar {
+.vuec ::-webkit-scrollbar {
   width: 8px;
   height: 8px;
   background-color: #f5f5f5;
 }
 
-.vuep ::-webkit-scrollbar-thumb {
+.vuec ::-webkit-scrollbar-thumb {
   border-radius: 8px;
   background-color: #bbb;
   transition: all 0.5s;
 }
 
-.vuep ::-webkit-scrollbar-thumb:hover {
+.vuec ::-webkit-scrollbar-thumb:hover {
   border-radius: 8px;
   background-color: #777;
 }
 
-.vuep-editor, .vuep-preview, .vuep-error {
+.vuec-editor, .vuec-preview, .vuec-error {
   border-radius: 2px;
   height: inherit;
   margin-right: 10px;
@@ -542,37 +542,43 @@ span.CodeMirror-selectedtext {
   width: 50%;
 }
 
-.vuep-editor .CodeMirror, .vuep-preview .CodeMirror, .vuep-error .CodeMirror {
+.vuec-editor .CodeMirror, .vuec-preview .CodeMirror, .vuec-error .CodeMirror {
   height: inherit;
 }
 
-.vuep-editor:last-child, .vuep-preview:last-child, .vuep-error:last-child {
+.vuec-editor:last-child, .vuec-preview:last-child, .vuec-error:last-child {
   margin-right: 0;
 }
 
-.vuep-editor {
+.vuec-editor {
   line-height: 1.2em;
 }
 
-.vuep-error {
+.vuec-error {
   color: #f66;
 }
 
-.vuep-preview, .vuep-error {
+.vuec-preview, .vuec-error {
   border: 1px solid #eee;
   box-sizing: border-box;
   padding: 25px 35px;
 }
 
 @media (max-width: 600px) {
-  .vuep {
+  .vuec {
     display: block;
     height: auto;
   }
 
-  .vuep-editor, .vuep-preview, .vuep-error {
+  .vuec-editor, .vuec-preview, .vuec-error {
     margin: 0 0 15px 0;
     height: 400px;
     width: 100%;
   }
+}
+
+.code-box-action {
+  width: 100%;
+  text-align: center;
+  padding: 5px;
 }

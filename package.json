@@ -1,14 +1,18 @@
 {
   "name": "vue-component-code-render",
   "version": "0.4.0",
-  "main": "./packages/vuec/dist/index.cjs.js",
+  "main": "./packages/dist/vuec.umd.js",
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
     "test:unit": "vue-cli-service test:unit",
     "build:file": "rollup -c",
+    "build:all": "npm run build:umd & npm run build:es & npm run build:unpkg & npm run build:css",
     "build:css": "node build/build-css.js",
+    "build:umd": "rollup --config rollup.config.js --format umd --file packages/dist/vuec.umd.js",
+    "build:es": "rollup --config rollup.config.js --format es --file packages/dist/vuec.esm.js",
+    "build:unpkg": "rollup --config rollup.config.js --format iife --file packages/dist/vuec.min.js",
     "release": "bash deploy.sh"
   },
   "dependencies": {
