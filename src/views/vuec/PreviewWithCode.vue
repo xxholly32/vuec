@@ -1,5 +1,5 @@
 <template>
-  <div class="hello">
+  <div class="code-container">
     <vuec :showTools="false" :template="code"></vuec>
   </div>
 </template>

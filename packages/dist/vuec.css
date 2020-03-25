@@ -505,36 +505,44 @@ span.CodeMirror-selectedtext {
   color: white !important;
 }
 
-.vuec {
+.vuec-container {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+      flex-direction: column;
+  height: 100%;
+}
+
+.vuec-container .vuec {
   display: -ms-flexbox;
   display: flex;
   font-family: "Source Sans Pro", "Helvetica Neue", Arial, sans-serif;
-  height: 400px;
+  height: 100%;
 }
 
-.vuec ::-webkit-scrollbar-track {
+.vuec-container .vuec ::-webkit-scrollbar-track {
   border-radius: 10px;
   background-color: #f5f5f5;
 }
 
-.vuec ::-webkit-scrollbar {
+.vuec-container .vuec ::-webkit-scrollbar {
   width: 8px;
   height: 8px;
   background-color: #f5f5f5;
 }
 
-.vuec ::-webkit-scrollbar-thumb {
+.vuec-container .vuec ::-webkit-scrollbar-thumb {
   border-radius: 8px;
   background-color: #bbb;
   transition: all 0.5s;
 }
 
-.vuec ::-webkit-scrollbar-thumb:hover {
+.vuec-container .vuec ::-webkit-scrollbar-thumb:hover {
   border-radius: 8px;
   background-color: #777;
 }
 
-.vuec-editor, .vuec-preview, .vuec-error {
+.vuec-container .vuec-editor, .vuec-container .vuec-preview, .vuec-container .vuec-error {
   border-radius: 2px;
   height: inherit;
   margin-right: 10px;
@@ -542,43 +550,42 @@ span.CodeMirror-selectedtext {
   width: 50%;
 }
 
-.vuec-editor .CodeMirror, .vuec-preview .CodeMirror, .vuec-error .CodeMirror {
+.vuec-container .vuec-editor .CodeMirror, .vuec-container .vuec-preview .CodeMirror, .vuec-container .vuec-error .CodeMirror {
   height: inherit;
 }
 
-.vuec-editor:last-child, .vuec-preview:last-child, .vuec-error:last-child {
+.vuec-container .vuec-editor:last-child, .vuec-container .vuec-preview:last-child, .vuec-container .vuec-error:last-child {
   margin-right: 0;
 }
 
-.vuec-editor {
+.vuec-container .vuec-editor {
   line-height: 1.2em;
 }
 
-.vuec-error {
+.vuec-container .vuec-error {
   color: #f66;
 }
 
-.vuec-preview, .vuec-error {
+.vuec-container .vuec-preview, .vuec-container .vuec-error {
   border: 1px solid #eee;
   box-sizing: border-box;
   padding: 25px 35px;
 }
 
-@media (max-width: 600px) {
-  .vuec {
-    display: block;
-    height: auto;
-  }
-
-  .vuec-editor, .vuec-preview, .vuec-error {
-    margin: 0 0 15px 0;
-    height: 400px;
-    width: 100%;
-  }
-}
-
-.code-box-action {
+.vuec-container .code-box-action {
   width: 100%;
   text-align: center;
   padding: 5px;
 }
+
+@media (max-width: 600px) {
+  .vuec-container .vuec {
+    display: block;
+    height: auto;
+  }
+  .vuec-container .vuec-editor, .vuec-container .vuec-preview, .vuec-container .vuec-error {
+    margin: 0 0 15px 0;
+    height: 400px;
+    width: 100%;
+  }
+  }

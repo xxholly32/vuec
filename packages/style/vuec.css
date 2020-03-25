@@ -1,84 +1,89 @@
 @import "codemirror/lib/codemirror.css";
 @import "codemirror/theme/material.css";
 
-.vuec {
+.vuec-container {
   display: flex;
-  font-family: "Source Sans Pro", "Helvetica Neue", Arial, sans-serif;
-  height: 400px;
+  flex-direction: column;
+  height: 100%;
 
-  ::-webkit-scrollbar-track {
-    border-radius: 10px;
-    background-color: #f5f5f5;
-  }
-
-  ::-webkit-scrollbar {
-    width: 8px;
-    height: 8px;
-    background-color: #f5f5f5;
-  }
-
-  ::-webkit-scrollbar-thumb {
-    border-radius: 8px;
-    background-color: #bbb;
-    transition: all 0.5s;
-  }
-
-  ::-webkit-scrollbar-thumb:hover {
-    border-radius: 8px;
-    background-color: #777;
-  }
-}
-
-.vuec-editor,
-.vuec-preview,
-.vuec-error {
-  border-radius: 2px;
-  height: inherit;
-  margin-right: 10px;
-  overflow: auto;
-  width: 50%;
-
-  &:last-child {
-    margin-right: 0;
-  }
-
-  .CodeMirror {
-    height: inherit;
-  }
-}
-
-.vuec-editor {
-  line-height: 1.2em;
-}
-
-.vuec-error {
-  color: #f66;
-}
-
-.vuec-preview,
-.vuec-error {
-  border: 1px solid #eee;
-  box-sizing: border-box;
-  padding: 25px 35px;
-}
-
-@media (max-width: 600px) {
   .vuec {
-    display: block;
-    height: auto;
+    display: flex;
+    font-family: "Source Sans Pro", "Helvetica Neue", Arial, sans-serif;
+    height: 100%;
+
+    ::-webkit-scrollbar-track {
+      border-radius: 10px;
+      background-color: #f5f5f5;
+    }
+
+    ::-webkit-scrollbar {
+      width: 8px;
+      height: 8px;
+      background-color: #f5f5f5;
+    }
+
+    ::-webkit-scrollbar-thumb {
+      border-radius: 8px;
+      background-color: #bbb;
+      transition: all 0.5s;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+      border-radius: 8px;
+      background-color: #777;
+    }
   }
 
   .vuec-editor,
   .vuec-preview,
   .vuec-error {
-    margin: 0 0 15px 0;
-    height: 400px;
-    width: 100%;
-  }
-}
+    border-radius: 2px;
+    height: inherit;
+    margin-right: 10px;
+    overflow: auto;
+    width: 50%;
 
-.code-box-action {
-  width: 100%;
-  text-align: center;
-  padding: 5px;
+    &:last-child {
+      margin-right: 0;
+    }
+
+    .CodeMirror {
+      height: inherit;
+    }
+  }
+
+  .vuec-editor {
+    line-height: 1.2em;
+  }
+
+  .vuec-error {
+    color: #f66;
+  }
+
+  .vuec-preview,
+  .vuec-error {
+    border: 1px solid #eee;
+    box-sizing: border-box;
+    padding: 25px 35px;
+  }
+
+  @media (max-width: 600px) {
+    .vuec {
+      display: block;
+      height: auto;
+    }
+
+    .vuec-editor,
+    .vuec-preview,
+    .vuec-error {
+      margin: 0 0 15px 0;
+      height: 400px;
+      width: 100%;
+    }
+  }
+  .code-box-action {
+    width: 100%;
+    text-align: center;
+    padding: 5px;
+  }
 }

@@ -1,5 +1,5 @@
 <template>
-  <div class="hello">
+  <div class="code-container">
     <vuem :template="code" @change="change"></vuem>
   </div>
 </template>
@@ -14,8 +14,7 @@ export default {
     };
   },
   created: function() {
-    this.code =
-`# 这是标题 1
+    this.code = `# 这是标题 1
 
 ## 这是标题 2`;
   },
@@ -27,5 +26,4 @@ export default {
 };
 </script>
 
-<style scoped>
-</style>
+<style scoped></style>

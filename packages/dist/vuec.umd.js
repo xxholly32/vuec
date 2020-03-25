@@ -280,21 +280,30 @@
           })
         : null;
 
-      return h("div", [
-        tooldiv,
-        h("div", { class: "vuec" }, [
-          editordiv,
-          h(Preview, {
-            class: "vuec-preview",
-            style: {
-              width: this.showEditor && this.showTools ? "50%" : "100%"
-            },
-            props: {
-              value: this.preview
-            }
-          })
-        ])
-      ]);
+      return h(
+        "div",
+        {
+          style: {
+            height: "600px"
+          },
+          class: "vuec-container"
+        },
+        [
+          tooldiv,
+          h("div", { class: "vuec" }, [
+            editordiv,
+            h(Preview, {
+              class: "vuec-preview",
+              style: {
+                width: this.showEditor && this.showTools ? "50%" : "100%"
+              },
+              props: {
+                value: this.preview
+              }
+            })
+          ])
+        ]
+      );
     },
 
     watch: {
@@ -670,6 +679,10 @@
     props: {
       template: String,
       options: {},
+      height: {
+        type: [String, Number],
+        default: "600px"
+      },
       showTools: {
         type: Boolean,
         default: true
@@ -712,21 +725,31 @@
           })
         : null;
 
-      return h("div", [
-        tooldiv,
-        h("div", { class: "vuec" }, [
-          editordiv,
-          h(Preview$1, {
-            class: "vuec-preview",
-            style: {
-              width: this.showEditor && this.showTools ? "50%" : "100%"
-            },
-            props: {
-              value: this.preview
-            }
-          })
-        ])
-      ]);
+      return h(
+        "div",
+        {
+          style: {
+            height:
+              typeof this.height === "number" ? this.height + "px" : this.height
+          },
+          class: "vuec-container"
+        },
+        [
+          tooldiv,
+          h("div", { class: "vuec" }, [
+            editordiv,
+            h(Preview$1, {
+              class: "vuec-preview",
+              style: {
+                width: this.showEditor && this.showTools ? "50%" : "100%"
+              },
+              props: {
+                value: this.preview
+              }
+            })
+          ])
+        ]
+      );
     },
 
     watch: {

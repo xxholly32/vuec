@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="code-container">
     <vuec :template="code"></vuec>
   </div>
 </template>

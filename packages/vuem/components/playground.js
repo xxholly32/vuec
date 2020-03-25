@@ -52,21 +52,30 @@ export default {
         })
       : null;
 
-    return h("div", [
-      tooldiv,
-      h("div", { class: "vuec" }, [
-        editordiv,
-        h(Preview, {
-          class: "vuec-preview",
-          style: {
-            width: this.showEditor && this.showTools ? "50%" : "100%"
-          },
-          props: {
-            value: this.preview
-          }
-        })
-      ])
-    ]);
+    return h(
+      "div",
+      {
+        style: {
+          height: "600px"
+        },
+        class: "vuec-container"
+      },
+      [
+        tooldiv,
+        h("div", { class: "vuec" }, [
+          editordiv,
+          h(Preview, {
+            class: "vuec-preview",
+            style: {
+              width: this.showEditor && this.showTools ? "50%" : "100%"
+            },
+            props: {
+              value: this.preview
+            }
+          })
+        ])
+      ]
+    );
   },
 
   watch: {

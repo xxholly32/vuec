@@ -1,5 +1,5 @@
 <template>
-  <div id="app">
+  <div id="app" class="main-container">
     <div id="nav">
       <router-link to="/">Home</router-link>|
       <router-link to="/simpleEditor">SimpleEditor</router-link>|
@@ -17,6 +17,11 @@
 </template>
 
 <style>
+html,
+body {
+  /* height: 100%; */
+  overflow: hidden;
+}
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -36,5 +41,9 @@
 
 #nav a.router-link-exact-active {
   color: #42b983;
+}
+.main-container {
+  display: flex;
+  flex-direction: column;
 }
 </style>
