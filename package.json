@@ -1,6 +1,6 @@
 {
   "name": "vue-component-code-render",
-  "version": "0.5.1",
+  "version": "0.6.0",
   "main": "./packages/dist/vuec.umd.js",
   "scripts": {
     "serve": "vue-cli-service serve",
