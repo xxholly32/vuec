@@ -34,7 +34,7 @@
     "@vue/test-utils": "1.0.0-beta.31",
     "babel-eslint": "^10.0.3",
     "babel-plugin-component": "^1.1.1",
-    "codemirror": "^5.51.0",
+    "codemirror": "^5.58.2",
     "core-js": "^3.6.4",
     "element-ui": "^2.13.0",
     "eslint": "^6.7.2",
