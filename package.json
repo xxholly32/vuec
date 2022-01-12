@@ -17,7 +17,7 @@
   },
   "dependencies": {
     "babel-plugin-transform-remove-console": "^6.9.4",
-    "markdown-it": "^10.0.0",
+    "markdown-it": "^12.3.2",
     "mine-jsjs": "^0.0.1",
     "rollup-plugin-vue-inline-svg": "^1.1.1",
     "simple-assign": "^0.1.0",
